@@ -1,0 +1,42 @@
+.iniciarSesion{
+    background-color: #296797;
+    height: 80px;
+}
+
+.boton{
+    background-color: #4AB2FC;
+}
+
+.iniciarSesion form{
+    padding-left: 100px;
+}
+.logo{
+    left: 50px;
+    bottom: 5px
+}
+.registro{
+    background-image: url(../imagenes/fondoEnvios.jpg);
+    color: #ffffff;
+    height: 650px;
+}
+
+.registro h2{
+    color: #ccc;
+}
+
+.registro form{
+    background-color: rgba(74,178,252,.3);
+    height: 580px;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+footer{
+    padding-top: 10px;
+    background-color: #296797;
+    color: #fff
+}
+
+.logoFooter{
+    bottom: 50px;
+}
