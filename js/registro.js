@@ -1,5 +1,4 @@
 function validar(){
-    console.log("hola MUNDO");
     var nombres;
     var apellidos;
     var email;
@@ -21,7 +20,6 @@ function validar(){
     fechaNacimiento = document.getElementById("fechaNacimiento").value;
     
     var edad = Edad(fechaNacimiento);
-    console.log("esta es la edad:"+edad);
 
     
     if(nombres === "" || apellidos === "" || email === "" || contraseña === "" || repiteContraseña==="" || fechaNacimiento===""){
