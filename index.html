@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>FlashMail</title>
+    <link rel="icon" type="imagen/png" href="imagenes/logo.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/inicioSesion.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
