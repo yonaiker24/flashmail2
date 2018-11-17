@@ -8,16 +8,23 @@
 }
 
 .iniciarSesion form{
-    padding-left: 100px;
+    padding-top: 20px;
+}
+
+.iniciarSesion button{
+    height: 40px;
 }
 .logo{
-    left: 50px;
-    bottom: 5px
+    bottom: 6px;
 }
 .registro{
-    background-image: url(../imagenes/fondoEnvios.jpg);
+    background-image: url(../Imagenes/fondoEnvios.jpg);
+
+    background-repeat: space;
+    width: 100%;
     color: #ffffff;
     height: 650px;
+    background-repeat: no-repeat;
 }
 
 .registro h2{
@@ -26,7 +33,7 @@
 
 .registro form{
     background-color: rgba(74,178,252,.3);
-    height: 580px;
+    height: 600px;
     border-radius: 12px;
     padding: 12px;
 }
