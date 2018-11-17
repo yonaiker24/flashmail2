@@ -13,8 +13,8 @@
     exit;
    }
 
-    echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
-    echo "Información del host: " . mysqli_get_host_info($conexion) . PHP_EOL;
+   // echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
+    //echo "Información del host: " . mysqli_get_host_info($conexion) . PHP_EOL;
 
     
     $nombres = $_POST['nombres'];
@@ -38,9 +38,9 @@
     $usuario = "INSERT INTO usuario(id, correo, contrasena) VALUES('$id', '$correo', '$contraseña')";
     $ejecutar = mysqli_query($conexion,$usuario);
 
-    echo "<br>";
+    //echo "<br>";
     if($ejecutar){
-        echo "datos guardados Correctamente USUARIO";
+      //  echo "datos guardados Correctamente USUARIO";
     }else {
       echo "Error: " . $usuario . "<br>" . mysqli_error($conexion);
     }
@@ -54,12 +54,12 @@
     
     
     
-    echo "<br>";
-    echo "este es el id: ".$idUsuario;
+    //echo "<br>";
+    //echo "este es el id: ".$idUsuario;
 
-    echo "<br>";
+    //echo "<br>";
     if($ejecutar){
-        echo "datos guardados Correctamente CLIENTE";
+      //  echo "datos guardados Correctamente CLIENTE";
     }else {
       echo "Error: " . $cliente . "<br>" . mysqli_error($conexion);
     }
@@ -68,12 +68,13 @@
     $direccion ="INSERT INTO direccion(id, id_cliente, pais, estado, ciudad, codigo_postal, zona, zona_2) VALUES('$id', '$idCliente', '$pais', '$estado', '$ciudad', '$codigoPostal', '$direccion', '$direccion2')";
     $ejecutar = mysqli_query($conexion,$direccion);
 
-    echo "<br>";
-    echo "este es el id: ".$idCliente;
+    //echo "<br>";
+    //echo "este es el id: ".$idCliente;
 
-    echo "<br>";
+   // echo "<br>";
     if($ejecutar){
-        echo "datos guardados Correctamente DIRECCION";
+    //   echo "datos guardados Correctamente DIRECCION";
+      echo '<script> window.location="../index.php"; </script>';
     }else {
       echo "Error: " . $direccion . "<br>" . mysqli_error($conexion);
     }
