@@ -67,7 +67,7 @@
                                   <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" tabindex="2" required>
                               </div>                         
                               <div class="form-group">
-                                  <label class="form-label" for="email">Correo Electronico:</label>
+                                  <label class="form-label" for="email">Correo Electrónico:</label>
                                   <input type="email" class="form-control" id="email" name="email" placeholder="Correo" tabindex="3" required>
                               </div>                            
                               <div class="form-group">
@@ -334,7 +334,7 @@
                                   <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" tabindex="8" required>
                               </div> 
                               <div class="form-group">
-                                  <label class="form-label" for="nombres">Codigo Postal:</label>
+                                  <label class="form-label" for="nombres">Código Postal:</label>
                                   <input type="text" class="form-control" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" tabindex="9" required>
                               </div> 
                               <div class="form-group">
@@ -342,8 +342,8 @@
                                   <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" tabindex="10" required>
                               </div>  
                               <div class="form-group">
-                                  <label class="form-label" for="nombres">Direccion 2(optativa):</label>
-                                  <input type="text" class="form-control" id="direccion2" name="direccion2" placeholder="Dirección" tabindex="11" required>
+                                  <label class="form-label" for="nombres">Dirección 2 (opcional):</label>
+                                  <input type="text" class="form-control" id="direccion2" name="direccion2" placeholder="Dirección (opcional)" tabindex="11">
                               </div>  
                               
                          </div>
@@ -373,7 +373,7 @@
                          <li><h5>Integrantes:</h5></li>
                          <li>Gabriel Ortega</li>
                          <li>María G. Avendaño</li>
-                         <li>Yonaiker Vásquez.</li>
+                         <li>Yonaiker Vásquez</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -382,7 +382,7 @@
                              <h5>Universidad Católica Andrés Bello</h5>
                          </li>
                          <li>Ingeniería en informática</li>
-                         <li>Cátedra: Ingeniería de Software</li>
+                         <li>Cátedra: Ingeniería del Software</li>
                          <li></li>
                          <li>Profesor: Carlos Barroeta</li>
                     </ul>
