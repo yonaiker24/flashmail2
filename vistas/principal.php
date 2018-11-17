@@ -24,12 +24,12 @@ $perfil = $_SESSION['correo'];
     <div>
         <article>
             <p>
-                felicidades es un usuario registrado
+                Felicidades es un usuario registrado
             </p>
             <br>
-            <b>Aqui ira el mapa y toda la interfaz visual</b>
+            <b>Aquí irá el mapa y toda la interfaz visual</b>
         </article>
-        <a href="../php/cerrarSesion.php"><button>Cerrar Sesion</button></a>
+        <a href="../php/cerrarSesion.php"><button>Cerrar Sesión</button></a>
     </div>
     
 </body>
