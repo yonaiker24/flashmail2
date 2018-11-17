@@ -37,21 +37,47 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `cliente`
+-- Estructura de tabla para la tabla `usuario`
 --
 
-INSERT INTO `cliente` (`nombre`, `apellido`, `fecha_nacimiento`, `id`, `id_usuario`) VALUES
-('Gabriel', 'Ortega', '1991-05-06', 4, 4);
+CREATE TABLE `usuario` (
+  `id` int(20) NOT NULL,
+  `correo` varchar(100) COLLATE utf8_bin NOT NULL,
+  `contrasena` varchar(20) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Índices para tablas volcadas
+-- Estructura de tabla para la tabla `direccion`
 --
+
+CREATE TABLE `direccion` (
+  `id` int(20) NOT NULL,
+  `id_cliente` int(20) NOT NULL,
+  `pais`varchar(20) CHARACTER SET armscii8 NOT NULL,
+  `estado`varchar(20) CHARACTER SET armscii8 NOT NULL,
+  `ciudad`varchar(20) CHARACTER SET armscii8 NOT NULL,
+  `codigo_postal` int(20) NOT NULL,
+  `zona` varchar(200) COLLATE utf8_bin NOT NULL,
+  `zona_2` varchar(200) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
+--
+-- Indices de la tabla `usuario`
+--  
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
+--
+-- Indices de la tabla `direccion`
+--  
+ALTER TABLE `direccion`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);  
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -61,9 +87,20 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 COMMIT;
-
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+--
+-- AUTO_INCREMENT de la tabla ` direccion`
+--
+ALTER TABLE `direccion`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+COMMIT;  
+  
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
