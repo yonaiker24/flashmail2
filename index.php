@@ -29,10 +29,10 @@
             <div class="col-md-8">
                     <form action="php/inicioSesion.php" method="POST">
                         <div class="row">
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-3 offset-md-4">
                                 <input type="email" class="form-control" id="correoSesion" name="correoSesion" placeholder="Correo">
                             </div>
-                            <div class="form-group col-md-5">
+                            <div class="form-group col-md-3">
                                 <input type="password" class="form-control" id="contraseñaSesion" name="contraseñaSesion" placeholder="Contraseña">
                             </div>
                             <button type="submit" class="btn btn-start-order col-md-2 boton">Entrar</button>
