@@ -5,25 +5,40 @@ function validar(){
     var contraseña;
     var repiteContraseña;
     var fechaNacimiento ;
+    var direccion;
+    var direcion2;
+    var ciudad;
+    var estado;
+    var codigoPostal;
+    
     var expresionEmail;
     var expresionContraseña;
+    var expresionLetras;
+    
     
     
     expresionEmail =/\w+@+\w+\.+[a-z]/;
     expresionContraseña = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/;
-    
+    expresionLetras = /^[a-zA-Z]*$/;
+
     nombres = document.getElementById("nombres").value;
     apellidos = document.getElementById("apellidos").value;
     email = document.getElementById("email").value;
     contraseña = document.getElementById("contraseña").value;
     repiteContraseña = document.getElementById("repiteContraseña").value;
     fechaNacimiento = document.getElementById("fechaNacimiento").value;
+    ciudad = document.getElementById("ciudad").value;
+    estado = document.getElementById("estado").value;
+    codigoPostal = document.getElementById("codigoPostal");
     
     var edad = Edad(fechaNacimiento);
 
     
     if(nombres === "" || apellidos === "" || email === "" || contraseña === "" || repiteContraseña==="" || fechaNacimiento===""){
         alert("Verifica que todos los campos esten llenos");
+        return false;
+    }else if (!expresionLetras.test(nombres) || !expresionLetras.test(apellidos) || !expresionLetras.test(ciudad) || !expresionLetras.test(estado)){
+        alert("campos(nombre,apellidos,ciudad,estado) solo llevan letras");
         return false;
     }else if(nombres.length>40 || apellidos.length>40){
         alert("los nombres o los apellidos son muy largos");
