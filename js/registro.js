@@ -19,7 +19,7 @@ function validar(){
     
     expresionEmail =/\w+@+\w+\.+[a-z]/;
     expresionContraseña = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/;
-    expresionLetras = /^[a-zA-Z]*$/;
+    expresionLetras = /^[a-zA-Z ]*$/;
 
     nombres = document.getElementById("nombres").value;
     apellidos = document.getElementById("apellidos").value;
@@ -34,7 +34,7 @@ function validar(){
     var edad = Edad(fechaNacimiento);
 
     
-    if(nombres === "" || apellidos === "" || email === "" || contraseña === "" || repiteContraseña==="" || fechaNacimiento===""){
+    if(nombres === "" || apellidos === "" || email === "" || contraseña === "" || repiteContraseña==="" || fechaNacimiento==="" || estado==="" || ciudad==="" || direccion===""){
         alert("Verifica que todos los campos esten llenos");
         return false;
     }else if (!expresionLetras.test(nombres) || !expresionLetras.test(apellidos) || !expresionLetras.test(ciudad) || !expresionLetras.test(estado)){
