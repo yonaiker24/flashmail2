@@ -14,6 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>FlashMail</title>
+    <link rel="icon" type="imagen/png" href="imagenes/logo.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/inicioSesion.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -372,7 +373,7 @@
                          <li><h5>Integrantes:</h5></li>
                          <li>Gabriel Ortega</li>
                          <li>María G. Avendaño</li>
-                         <li>Yonaiker Vázquez.</li>
+                         <li>Yonaiker Vásquez.</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -380,8 +381,8 @@
                          <li>
                              <h5>Universidad Catolica Andres Bello</h5>
                          </li>
-                         <li>Ingeniería en informatica</li>
-                         <li>Catedra: Ingeniería de Software</li>
+                         <li>Ingeniería en informática</li>
+                         <li>Cátedra: Ingeniería de Software</li>
                          <li></li>
                          <li>Profesor: Carlos Barroeta</li>
                     </ul>
