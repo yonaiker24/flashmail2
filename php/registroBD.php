@@ -74,7 +74,9 @@
    // echo "<br>";
     if($ejecutar){
     //   echo "datos guardados Correctamente DIRECCION";
+      echo "<script> alert('Registrado Satisfactoriamente')</script>";
       echo '<script> window.location="../index.php"; </script>';
+
     }else {
       echo "Error: " . $direccion . "<br>" . mysqli_error($conexion);
     }
