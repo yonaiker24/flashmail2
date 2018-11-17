@@ -68,7 +68,7 @@
                               </div>                         
                               <div class="form-group">
                                   <label class="form-label" for="email">Correo Electronico:</label>
-                                  <input type="email" class="form-control" id="email" name="email" placeholder="correo" tabindex="3" required>
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="Correo" tabindex="3" required>
                               </div>                            
                               <div class="form-group">
                                   <label class="form-label" for="fechaNacimiento">Fecha de Nacimiento:</label>
@@ -335,15 +335,15 @@
                               </div> 
                               <div class="form-group">
                                   <label class="form-label" for="nombres">Codigo Postal:</label>
-                                  <input type="text" class="form-control" id="codigoPostal" name="codigoPostal" placeholder="codigoPostal" tabindex="9" required>
+                                  <input type="text" class="form-control" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" tabindex="9" required>
                               </div> 
                               <div class="form-group">
                                   <label class="form-label" for="nombres">Dirección de tu Hogar:</label>
-                                  <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" tabindex="10" required>
+                                  <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" tabindex="10" required>
                               </div>  
                               <div class="form-group">
                                   <label class="form-label" for="nombres">Direccion 2(optativa):</label>
-                                  <input type="text" class="form-control" id="direccion2" name="direccion2" placeholder="Direccion" tabindex="11" required>
+                                  <input type="text" class="form-control" id="direccion2" name="direccion2" placeholder="Dirección" tabindex="11" required>
                               </div>  
                               
                          </div>
@@ -379,7 +379,7 @@
                 <div class="col-md-4">
                     <ul class="text-center">
                          <li>
-                             <h5>Universidad Catolica Andres Bello</h5>
+                             <h5>Universidad Católica Andrés Bello</h5>
                          </li>
                          <li>Ingeniería en informática</li>
                          <li>Cátedra: Ingeniería de Software</li>
