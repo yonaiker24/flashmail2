@@ -1,21 +1,12 @@
 <?php
-  $servidor = "localhost"; //Aqui va el servidor que utilizaremos
-  $usuario = "root";  // aqui va nuestro usuario de la base de datos
-  $contraseña = "";   // contrasela del usuario en caso de tenerla
-  $BD = "flashmail";  // nombre de la base de datos
-   $sql;                   
-   $conexion = mysqli_connect($servidor,$usuario,$contraseña,$BD);
+  $conn_string = "host=ec2-54-235-193-0.compute-1.amazonaws.com port=5432 dbname=dbrpcostlumanv user=yzlgbqotsrcikb password=928dad77a909ba60de8e439578ca7d40ef2800d95f0cd9f95c35e700e8ddb34b options='--client_encoding=UTF8'";       
+           
+   $conexion = pg_connect($conn_string);
                       
    if (!$conexion) {
-    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+    echo "Error: No se pudo conectar a Postgresql." . pg_last_error();
     exit;
    }
-
-   // echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
-    //echo "Información del host: " . mysqli_get_host_info($conexion) . PHP_EOL;
-
     
     $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];
@@ -29,58 +20,46 @@
     $ciudad = $_POST['ciudad'];
     $codigoPostal = $_POST['codigoPostal'];
 
-    $id = '';
-
-    //echo $nombres.$apellidos.$correo.$fechaNacimiento.$contraseña.$direccion;
-
-
-   
-    $usuario = "INSERT INTO usuario(id, correo, contrasena) VALUES('$id', '$correo', '$contraseña')";
-    $ejecutar = mysqli_query($conexion,$usuario);
-
-    //echo "<br>";
-    if($ejecutar){
-      //  echo "datos guardados Correctamente USUARIO";
-    }else {
-      echo "Error: " . $usuario . "<br>" . mysqli_error($conexion);
+    // ----------------CREAR USUARIO--------------------
+    $usuario = "INSERT INTO usuario(correo, contrasena) VALUES ('$correo', '$contraseña') RETURNING id_usuario";
+    $ejecutar = pg_query($usuario); 
+    if(!$ejecutar){
+      echo "<br>";
+      echo "Error: " .  pg_last_error();
     }
 
-
-     
-    $idUsuario = mysqli_insert_id($conexion); //aqui retomo el id del ultimo Usuario creado en la BD
-    
-    $cliente="INSERT INTO cliente(nombre, apellido, fecha_nacimiento, id ,id_usuario) VALUES('$nombres', '$apellidos', '$fechaNacimiento', '$idUsuario','$idUsuario')";
-    $ejecutar = mysqli_query($conexion,$cliente);
-    
-    
-    
-    //echo "<br>";
-    //echo "este es el id: ".$idUsuario;
-
-    //echo "<br>";
-    if($ejecutar){
-      //  echo "datos guardados Correctamente CLIENTE";
-    }else {
-      echo "Error: " . $cliente . "<br>" . mysqli_error($conexion);
+    //--------------CRERAR CLIENTE----------------------    
+    $row = pg_fetch_row($ejecutar);
+    $idUsuario = $row[0]; //buscando el id del usuario para agregarselo a la tabla cliente 
+    $cliente = "INSERT INTO cliente(id_usuario, nombre, apellido, fecha_nacimiento) VALUES ('$idUsuario','$nombres', '$apellidos', '$fechaNacimiento' )RETURNING id_cliente";
+    $ejecutar = pg_query($cliente);
+    if(!$ejecutar){
+      echo "<br>";
+      echo "Error: " . pg_last_error();
     }
 
-    $idCliente = mysqli_insert_id($conexion);//aqui retomo el id del ultimo cliente creado en la 
-    $direccion ="INSERT INTO direccion(id, id_cliente, pais, estado, ciudad, codigo_postal, zona, zona_2) VALUES('$id', '$idCliente', '$pais', '$estado', '$ciudad', '$codigoPostal', '$direccion', '$direccion2')";
-    $ejecutar = mysqli_query($conexion,$direccion);
+   //-------------CREAR DIRECCION----------------------
+    $row = pg_fetch_row($ejecutar);
+    $idCliente = $row[0]; //buscando el id del cliente para agregarselo a la tabla direccion
+    $direccion ="INSERT INTO direccion(id_cliente, pais, estado, ciudad, codigo_postal, zona, zona_2) VALUES('$idCliente', '$pais', '$estado', '$ciudad', '$codigoPostal', '$direccion', '$direccion2')";
+    $ejecutar = pg_query($direccion);
+    if(!$ejecutar){
+      echo "<br>";
+      echo "Error: " . pg_last_error();
+    }
 
-    //echo "<br>";
-    //echo "este es el id: ".$idCliente;
-
-   // echo "<br>";
+    //-----------USUARIO REGISTRADO-----------------------
     if($ejecutar){
-    //   echo "datos guardados Correctamente DIRECCION";
       echo "<script> alert('Registrado Satisfactoriamente')</script>";
       echo '<script> window.location="../index.php"; </script>';
 
     }else {
-      echo "Error: " . $direccion . "<br>" . mysqli_error($conexion);
+      echo "Error: " . pg_last_error();
     }
 
-    mysqli_close($conexion);
+
+
+    //---------CERRAR CONEXION----------------------
+    pg_close($conexion);
                       
 ?>
