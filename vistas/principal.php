@@ -18,7 +18,8 @@ $perfil = $_SESSION['correo'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>FlashMail</title>
+    <link rel="icon" type="imagen/png" href="imagenes/logo.png">
 </head>
 <body>
     <div>
